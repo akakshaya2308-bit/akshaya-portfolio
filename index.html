@@ -1,0 +1,1253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akshaya K | AI &amp; Data Science Student</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0f1416;
+        --surface: #161f22;
+        --surface-2: #1d2a2d;
+        --line: #2a3a3d;
+        --text: #e8e6df;
+        --text-dim: #8fa0a0;
+        --amber: #ffb100;
+        --teal: #4fd1c5;
+        --radius: 10px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+
+      .eyebrow {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--amber);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--amber);
+        box-shadow: 0 0 8px var(--amber);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* ---------- NAV ---------- */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(15, 20, 22, 0.85);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 24px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .logo {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 500;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .logo span {
+        color: var(--amber);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        font-size: 0.9rem;
+        color: var(--text-dim);
+      }
+
+      .nav-links a {
+        transition: color 0.2s ease;
+        position: relative;
+      }
+      .nav-links a:hover {
+        color: var(--text);
+      }
+      .nav-links a:focus-visible,
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--amber);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+
+      .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--text);
+        font-size: 1.4rem;
+        cursor: pointer;
+      }
+
+      /* ---------- HERO ---------- */
+      .hero {
+        padding: 120px 0 100px;
+        position: relative;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 56px;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.4rem, 5vw, 3.6rem);
+        line-height: 1.08;
+        margin: 18px 0 20px;
+      }
+
+      .hero h1 .hl {
+        color: var(--amber);
+      }
+
+      .hero p.lead {
+        color: var(--text-dim);
+        font-size: 1.05rem;
+        max-width: 46ch;
+        margin-bottom: 32px;
+      }
+
+      .btn-row {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 13px 24px;
+        border-radius: 8px;
+        font-size: 0.92rem;
+        font-weight: 500;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition:
+          transform 0.15s ease,
+          background 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .btn-primary {
+        background: var(--amber);
+        color: #171200;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-ghost {
+        border-color: var(--line);
+        color: var(--text);
+      }
+      .btn-ghost:hover {
+        border-color: var(--teal);
+        color: var(--teal);
+      }
+
+      /* terminal card */
+      .term {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.6);
+      }
+
+      .term-bar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 16px;
+        background: var(--surface-2);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+      .dot.r {
+        background: #ff5f57;
+      }
+      .dot.y {
+        background: #febc2e;
+      }
+      .dot.g {
+        background: #28c840;
+      }
+
+      .term-title {
+        margin-left: 8px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        color: var(--text-dim);
+      }
+
+      .term-body {
+        padding: 26px 22px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.92rem;
+        min-height: 180px;
+      }
+
+      .term-body .line {
+        color: var(--text-dim);
+        margin-bottom: 6px;
+      }
+      .term-body .prompt {
+        color: var(--teal);
+      }
+      .term-body .out {
+        color: var(--text);
+      }
+      .cursor {
+        display: inline-block;
+        width: 8px;
+        height: 1.1em;
+        background: var(--amber);
+        margin-left: 2px;
+        vertical-align: text-bottom;
+        animation: blink 1s step-end infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      /* ---------- SECTION SHELL ---------- */
+      section {
+        padding: 96px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .section-head {
+        margin-bottom: 48px;
+        max-width: 60ch;
+      }
+      .section-head h2 {
+        font-size: clamp(1.8rem, 3vw, 2.4rem);
+        margin-top: 12px;
+      }
+      .section-head p {
+        color: var(--text-dim);
+        margin-top: 14px;
+      }
+
+      /* ---------- ABOUT ---------- */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 56px;
+        align-items: start;
+      }
+
+      .about-photo {
+        aspect-ratio: 4/5;
+        border-radius: var(--radius);
+        background: linear-gradient(160deg, var(--surface-2), var(--surface));
+        border: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-dim);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.85rem;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .about-text p {
+        margin-bottom: 16px;
+        color: var(--text-dim);
+      }
+      .about-text strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .stat-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 32px;
+      }
+
+      .stat {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 18px;
+        background: var(--surface);
+      }
+      .stat .num {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.6rem;
+        color: var(--amber);
+        font-weight: 700;
+      }
+      .stat .label {
+        font-size: 0.78rem;
+        color: var(--text-dim);
+        margin-top: 4px;
+      }
+
+      /* ---------- SERVICES ---------- */
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .service-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 28px 24px;
+        transition:
+          border-color 0.2s ease,
+          transform 0.2s ease;
+      }
+      .service-card:hover {
+        border-color: var(--teal);
+        transform: translateY(-4px);
+      }
+
+      .service-tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        color: var(--teal);
+      }
+
+      .service-card h3 {
+        font-size: 1.15rem;
+        margin: 14px 0 10px;
+      }
+      .service-card p {
+        color: var(--text-dim);
+        font-size: 0.92rem;
+      }
+
+      /* ---------- PROJECTS ---------- */
+      .project-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+
+      .project-row {
+        background: var(--bg);
+        display: grid;
+        grid-template-columns: 100px 1fr auto;
+        gap: 24px;
+        align-items: center;
+        padding: 26px 24px;
+        transition: background 0.2s ease;
+      }
+      .project-row:hover {
+        background: var(--surface);
+      }
+
+      .project-index {
+        font-family: "JetBrains Mono", monospace;
+        color: var(--amber);
+        font-size: 0.9rem;
+      }
+
+      .project-info h3 {
+        font-size: 1.15rem;
+        margin-bottom: 6px;
+      }
+      .project-info p {
+        color: var(--text-dim);
+        font-size: 0.9rem;
+      }
+
+      .project-tags {
+        display: flex;
+        gap: 8px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+      }
+      .project-tags span {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.7rem;
+        padding: 4px 9px;
+        border-radius: 20px;
+        border: 1px solid var(--line);
+        color: var(--text-dim);
+      }
+
+      .project-link {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.85rem;
+        color: var(--teal);
+        white-space: nowrap;
+      }
+
+      /* ---------- CONTACT / NEWSLETTER ---------- */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        color: var(--text-dim);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 12px 14px;
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-size: 0.95rem;
+        transition: border-color 0.2s ease;
+      }
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--teal);
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .form-msg {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.82rem;
+        margin-top: 6px;
+        min-height: 1.2em;
+      }
+      .form-msg.ok {
+        color: var(--teal);
+      }
+
+      .newsletter-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .newsletter-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+      }
+      .newsletter-card p {
+        color: var(--text-dim);
+        font-size: 0.92rem;
+        margin-bottom: 24px;
+      }
+
+      .newsletter-form {
+        display: flex;
+        gap: 10px;
+        flex-direction: row;
+      }
+      .newsletter-form input {
+        flex: 1;
+      }
+      .newsletter-form button {
+        padding: 12px 20px;
+        background: var(--amber);
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        white-space: nowrap;
+        font-family: "Inter", sans-serif;
+      }
+
+      .direct-links {
+        margin-top: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .direct-links a {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 0.92rem;
+        color: var(--text-dim);
+        transition: color 0.2s ease;
+      }
+      .direct-links a:hover {
+        color: var(--amber);
+      }
+
+      footer {
+        padding: 32px 0;
+        border-top: 1px solid var(--line);
+        text-align: center;
+        color: var(--text-dim);
+        font-size: 0.82rem;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      /* ---------- RESPONSIVE ---------- */
+      @media (max-width: 860px) {
+        .hero-grid,
+        .about-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        .service-grid {
+          grid-template-columns: 1fr;
+        }
+        .stat-row {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .project-row {
+          grid-template-columns: 1fr;
+        }
+        .project-link {
+          justify-self: start;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .nav-links {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--bg);
+          border-bottom: 1px solid var(--line);
+          flex-direction: column;
+          padding: 20px 24px;
+          gap: 18px;
+          display: none;
+        }
+        .nav-links.open {
+          display: flex;
+        }
+        .nav-toggle {
+          display: block;
+        }
+        .newsletter-form {
+          flex-direction: column;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .cursor {
+          animation: none;
+          opacity: 1;
+        }
+        .service-card,
+        .btn-primary {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">&lt;<span>AK</span>/&gt;</div>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <div class="nav-links" id="navLinks">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" style="border-top: none">
+        <div class="wrap hero-grid">
+          <div>
+            <p class="eyebrow">AI • Web • Creativity</p>
+            <h1>
+              Hi, I'm <span class="hl">Akshaya K</span><br />
+              a 2nd-year <span class="hl">AI &amp; Data Science</span> student.
+            </h1>
+            <p class="lead">
+              I'm a student at Vels Institute of Science and Technology,
+              Pallavaram, passionate about Computer Science, Artificial
+              Intelligence, web development, and creative technology. I enjoy
+              learning by building real things and turning ideas into practical
+              projects.
+            </p>
+            <div class="btn-row">
+              <a href="#about" class="btn btn-primary">About Me</a>
+              <a href="#contact" class="btn btn-ghost">Let’s Connect</a>
+            </div>
+          </div>
+          <div class="term">
+            <div class="term-bar">
+              <span class="dot r"></span><span class="dot y"></span
+              ><span class="dot g"></span>
+              <span class="term-title">whoami.sh</span>
+            </div>
+            <div class="term-body">
+              <div class="line"><span class="prompt">$</span> whoami</div>
+              <div class="line out" id="typedOut"></div>
+              <div class="line" style="margin-top: 18px">
+                <span class="prompt">$</span> cat skills.txt
+              </div>
+              <div class="line out">
+                AI · Web Dev · Python · Canva · Content
+              </div>
+              <div class="line" style="margin-top: 6px">
+                <span class="prompt">$</span> <span class="cursor"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">About</p>
+            <h2>Learning by building, not just by studying.</h2>
+          </div>
+          <div class="about-grid">
+            <div class="about-photo">
+              <img src="Ak.jpeg" alt="Akshaya K portrait" />
+            </div>
+            <div class="about-text">
+              <p>
+                I'm <strong>Akshaya K</strong>, a
+                <strong
+                  >2nd-year B.Sc. Artificial Intelligence &amp; Data Science
+                  student</strong
+                >
+                at
+                <strong
+                  >Vels Institute of Science and Technology, Pallavaram</strong
+                >.
+              </p>
+              <p>
+                I'm interested in
+                <strong
+                  >Computer Science, Artificial Intelligence, Web Development,
+                  and Creative Technology</strong
+                >. I enjoy learning by actually building things rather than just
+                studying theory. That curiosity drives my projects, my learning,
+                and the way I approach technology.
+              </p>
+              <p>
+                Right now, I'm focused on leveling up my computer science
+                skills, building a stronger portfolio, creating meaningful
+                projects, and preparing myself for internships and future
+                opportunities in tech. I especially enjoy combining
+                <strong>AI + coding + web development + creativity</strong> to
+                build useful and impactful things.
+              </p>
+              <blockquote
+                style="
+                  margin-top: 20px;
+                  padding-left: 18px;
+                  border-left: 2px solid var(--amber);
+                  color: var(--text);
+                  font-size: 1.02rem;
+                  line-height: 1.8;
+                "
+              >
+                I’m an AI &amp; Data Science student who loves coding, AI, web
+                development, content creation, and building projects — basically
+                trying to turn myself into a genuinely skilled tech person, not
+                just a degree holder.
+              </blockquote>
+              <div class="stat-row">
+                <div class="stat">
+                  <div class="num">2nd</div>
+                  <div class="label">Year student</div>
+                </div>
+                <div class="stat">
+                  <div class="num">AI</div>
+                  <div class="label">+ Data Science</div>
+                </div>
+                <div class="stat">
+                  <div class="num">Build</div>
+                  <div class="label">Focused mindset</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">What I do</p>
+            <h2>Exploring tech through building, designing, and learning.</h2>
+            <p>
+              My interests are broad, but they all connect to problem-solving,
+              creativity, and practical execution.
+            </p>
+          </div>
+          <div class="service-grid">
+            <div class="service-card">
+              <span class="service-tag">01 / Web</span>
+              <h3>Web Development</h3>
+              <p>
+                Building websites and experimenting with frontend technologies
+                to create functional, user-friendly digital experiences.
+              </p>
+            </div>
+            <div class="service-card">
+              <span class="service-tag">02 / AI</span>
+              <h3>AI &amp; AI Tools</h3>
+              <p>
+                Using AI for learning, brainstorming, development, automation,
+                and creative work to turn ideas into practical solutions.
+              </p>
+            </div>
+            <div class="service-card">
+              <span class="service-tag">03 / Code</span>
+              <h3>Programming</h3>
+              <p>
+                Strengthening my programming fundamentals and working toward
+                stronger computer science skills with hands-on practice.
+              </p>
+            </div>
+            <div class="service-card">
+              <span class="service-tag">04 / Build</span>
+              <h3>Project Building</h3>
+              <p>
+                Turning ideas into practical websites, tools, and AI-based
+                projects that show what I can do in real situations.
+              </p>
+            </div>
+            <div class="service-card">
+              <span class="service-tag">05 / Growth</span>
+              <h3>Social Media Marketing</h3>
+              <p>
+                Creating content strategies and helping with digital presence so
+                ideas can reach and engage people effectively.
+              </p>
+            </div>
+            <div class="service-card">
+              <span class="service-tag">06 / Design</span>
+              <h3>Design</h3>
+              <p>
+                Using tools like Canva and Figma to create visual assets,
+                thumbnails, and creative materials that support both content and
+                branding.
+              </p>
+            </div>
+            <div class="service-card">
+              <span class="service-tag">07 / Create</span>
+              <h3>Content Creation</h3>
+              <p>
+                Working on YouTube content, SEO, thumbnails, and video ideas
+                while building my creative and digital communication skills.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">Projects</p>
+            <h2>Building ideas into practical work.</h2>
+            <p>
+              My current goal is to create projects that show my skills in AI,
+              programming, design, and problem-solving.
+            </p>
+          </div>
+          <div class="project-list">
+            <div class="project-row">
+              <span class="project-index">01</span>
+              <div class="project-info">
+                <h3>Portfolio Website</h3>
+                <p>
+                  A personal portfolio site built to showcase my skills,
+                  interests, and projects in a clean, professional way.
+                </p>
+                <div class="project-tags">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JavaScript</span>
+                </div>
+              </div>
+              <a href="#" class="project-link">Live view →</a>
+            </div>
+
+            <div class="project-row">
+              <span class="project-index">02</span>
+              <div class="project-info">
+                <h3>Attendance Management System</h3>
+                <p>
+                  A practical attendance tracking project focused on managing
+                  student/employee attendance efficiently with a clean and
+                  user-friendly interface.
+                </p>
+                <div class="project-tags">
+                  <span>Web App</span>
+                  <span>Attendance</span>
+                  <span>Productivity</span>
+                </div>
+              </div>
+              <a
+                href="https://myportfolioak.neocities.org/Attendance%20/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+                >Live demo →</a
+              >
+            </div>
+            <div class="project-row">
+              <span class="project-index">03</span>
+              <div class="project-info">
+                <h3>UGC Product Ad</h3>
+                <p>
+                  A short-form UGC-style product advertisement created to
+                  showcase marketing creativity and product presentation in a
+                  modern digital format.
+                </p>
+                <div class="project-tags">
+                  <span>UGC</span>
+                  <span>Video Ad</span>
+                  <span>Content Creation</span>
+                </div>
+                <iframe
+                  src="https://drive.google.com/file/d/1aje7hQtRS9B68N0fb8A4jT3Z70T5uWJu/preview"
+                  title="UGC Product Ad"
+                  allow="
+                    autoplay;
+                    encrypted-media;
+                    picture-in-picture;
+                    fullscreen;
+                  "
+                  allowfullscreen
+                  style="
+                    width: 100%;
+                    max-width: 500px;
+                    height: 280px;
+                    margin-top: 18px;
+                    border: 1px solid var(--line);
+                    border-radius: 12px;
+                    background: #0b1012;
+                  "
+                ></iframe>
+              </div>
+              <a
+                href="https://drive.google.com/file/d/1aje7hQtRS9B68N0fb8A4jT3Z70T5uWJu/view?usp=drivesdk"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+                >Watch video →</a
+              >
+            </div>
+            <div class="project-row">
+              <span class="project-index">04</span>
+              <div class="project-info">
+                <h3>QR Code Generator</h3>
+                <p>
+                  A simple and useful QR code generator project that turns a
+                  link into a scannable QR code for quick access and sharing.
+                </p>
+                <div class="project-tags">
+                  <span>QR Code</span>
+                  <span>Web Tool</span>
+                  <span>JavaScript</span>
+                </div>
+              </div>
+              <a
+                href="https://myportfolioak.neocities.org/qr_portlink/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+                >Live demo →</a
+              >
+            </div>
+            <div class="project-row">
+              <span class="project-index">05</span>
+              <div class="project-info">
+                <h3>Project Reel</h3>
+                <p>
+                  A short video compilation of my work, edited with clips from
+                  my own projects to showcase my progress and creative journey.
+                  This is part of my plan to start my own content creation
+                  channel.
+                </p>
+                <div class="project-tags">
+                  <span>Project Video</span>
+                  <span>Editing</span>
+                  <span>Content Creation</span>
+                </div>
+                <iframe
+                  src="https://drive.google.com/file/d/1Q5LLIRdJbUScmrbgteHG9ZwDz8y0EdXJ/preview"
+                  title="Project Reel"
+                  allow="
+                    autoplay;
+                    encrypted-media;
+                    picture-in-picture;
+                    fullscreen;
+                  "
+                  allowfullscreen
+                  style="
+                    width: 100%;
+                    max-width: 500px;
+                    height: 280px;
+                    margin-top: 18px;
+                    border: 1px solid var(--line);
+                    border-radius: 12px;
+                    background: #0b1012;
+                  "
+                ></iframe>
+              </div>
+              <a
+                href="https://drive.google.com/file/d/1Q5LLIRdJbUScmrbgteHG9ZwDz8y0EdXJ/view?usp=drivesdk"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+                >Watch video →</a
+              >
+            </div>
+            <div class="project-row">
+              <span class="project-index">06</span>
+              <div class="project-info">
+                <h3>Freelance Perfume Ad Posters</h3>
+                <p>
+                  Created premium promotional poster designs for a client’s
+                  perfume brand, featuring luxury styling, perfume bottle
+                  presentation, and a polished advertising aesthetic.
+                </p>
+                <div class="project-tags">
+                  <span>Branding</span>
+                  <span>Poster Design</span>
+                  <span>Freelance</span>
+                </div>
+                <div
+                  style="
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                    gap: 14px;
+                    margin-top: 18px;
+                  "
+                >
+                  <img
+                    src="Royal Fragrance Opulent Poster Presentation.png"
+                    alt="Royal Fragrance poster presentation"
+                    style="
+                      width: 100%;
+                      border-radius: 12px;
+                      border: 1px solid var(--line);
+                      object-fit: cover;
+                    "
+                  />
+                  <img
+                    src="Majestic Perfume Bottle on Velvet Background.png"
+                    alt="Majestic perfume bottle on velvet background"
+                    style="
+                      width: 100%;
+                      border-radius: 12px;
+                      border: 1px solid var(--line);
+                      object-fit: cover;
+                    "
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">Contact</p>
+            <h2>Let's work together.</h2>
+            <p>
+              Have a project in mind, or just want to say hi? Send a message
+              below.
+            </p>
+          </div>
+          <div class="contact-grid">
+            <form id="contactForm">
+              <div class="field">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Your name"
+                />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="you@example.com"
+                />
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  placeholder="Tell me about your project..."
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                style="align-self: flex-start"
+              >
+                Send Message
+              </button>
+              <p class="form-msg" id="contactMsg"></p>
+            </form>
+
+            <div>
+              <div class="newsletter-card">
+                <div>
+                  <h3>Join the newsletter</h3>
+                  <p>
+                    Occasional notes on new projects, videos, and things I'm
+                    learning. No spam.
+                  </p>
+                  <form class="newsletter-form" id="newsletterForm">
+                    <input
+                      type="email"
+                      id="newsletterEmail"
+                      placeholder="you@example.com"
+                      required
+                      aria-label="Email for newsletter"
+                    />
+                    <button type="submit">Subscribe</button>
+                  </form>
+                  <p class="form-msg" id="newsletterMsg"></p>
+                </div>
+              </div>
+
+              <div class="direct-links">
+                <a href="mailto:akakshaya2308@gmail.com"
+                  ><span>Email</span><span> akakshaya2308@gmail.com →</span></a
+                >
+                <a
+                  href="https://www.linkedin.com/in/akshaya-k-411002390?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><span>LinkedIn</span><span> Connect with me →</span></a
+                >
+                <a href="#"
+                  ><span>YouTube</span><span> Content coming soon →</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>© <span id="year"></span> — Built with HTML, CSS &amp; JS.</footer>
+
+    <script>
+      // Mobile nav toggle
+      const navToggle = document.getElementById("navToggle");
+      const navLinks = document.getElementById("navLinks");
+      navToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("open");
+        navToggle.setAttribute("aria-expanded", isOpen);
+      });
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+          navToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      // Typing effect in hero terminal
+      const typedEl = document.getElementById("typedOut");
+      const roles = [
+        "AI & Data Science Student.",
+        "Web Developer.",
+        "Creative Technologist.",
+        "Problem Solver.",
+      ];
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      if (reduceMotion) {
+        typedEl.textContent = roles[0];
+      } else {
+        let roleIndex = 0,
+          charIndex = 0,
+          deleting = false;
+
+        function typeLoop() {
+          const current = roles[roleIndex];
+          if (!deleting) {
+            typedEl.textContent = current.slice(0, charIndex + 1);
+            charIndex++;
+            if (charIndex === current.length) {
+              deleting = true;
+              setTimeout(typeLoop, 1400);
+              return;
+            }
+          } else {
+            typedEl.textContent = current.slice(0, charIndex - 1);
+            charIndex--;
+            if (charIndex === 0) {
+              deleting = false;
+              roleIndex = (roleIndex + 1) % roles.length;
+            }
+          }
+          setTimeout(typeLoop, deleting ? 40 : 70);
+        }
+        typeLoop();
+      }
+
+      // Contact form (front-end only — wire up to a backend/service to actually send)
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const msg = document.getElementById("contactMsg");
+          msg.textContent =
+            "Thanks — your message has been noted. (Connect this form to a backend or service like Formspree to actually receive it.)";
+          msg.classList.add("ok");
+          this.reset();
+        });
+
+      // Newsletter form (front-end only)
+      document
+        .getElementById("newsletterForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const msg = document.getElementById("newsletterMsg");
+          msg.textContent =
+            "You're on the list. (Connect this to Mailchimp/ConvertKit/etc. to actually collect emails.)";
+          msg.classList.add("ok");
+          this.reset();
+        });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
