@@ -401,64 +401,72 @@
 
       /* ---------- PROJECTS ---------- */
       .project-list {
-        display: flex;
-        flex-direction: column;
-        gap: 1px;
-        background: var(--line);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        overflow: hidden;
-      }
+  display: flex;
+  flex-direction: column;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
 
-      .project-row {
-        background: var(--bg);
-        display: grid;
-        grid-template-columns: 100px 1fr auto;
-        gap: 24px;
-        align-items: center;
-        padding: 26px 24px;
-        transition: background 0.2s ease;
-      }
-      .project-row:hover {
-        background: var(--surface);
-      }
+.project-row {
+  background: var(--bg);
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 26px 24px;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.2s ease;
+}
 
-      .project-index {
-        font-family: "JetBrains Mono", monospace;
-        color: var(--amber);
-        font-size: 0.9rem;
-      }
+.project-row:hover {
+  background: var(--surface);
+}
 
-      .project-info h3 {
-        font-size: 1.15rem;
-        margin-bottom: 6px;
-      }
-      .project-info p {
-        color: var(--text-dim);
-        font-size: 0.9rem;
-      }
+/* Remove the last separator */
+.project-row:last-child {
+  border-bottom: none;
+}
 
-      .project-tags {
-        display: flex;
-        gap: 8px;
-        margin-top: 10px;
-        flex-wrap: wrap;
-      }
-      .project-tags span {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 0.7rem;
-        padding: 4px 9px;
-        border-radius: 20px;
-        border: 1px solid var(--line);
-        color: var(--text-dim);
-      }
+.project-index {
+  font-family: "JetBrains Mono", monospace;
+  color: var(--amber);
+  font-size: 0.9rem;
+}
 
-      .project-link {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 0.85rem;
-        color: var(--teal);
-        white-space: nowrap;
-      }
+.project-info h3 {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+.project-info p {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.project-tags {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.project-tags span {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  padding: 4px 9px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+}
+
+.project-link {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  color: var(--teal);
+  white-space: nowrap;
+}
 
       /* ---------- CONTACT / NEWSLETTER ---------- */
       .contact-grid {
