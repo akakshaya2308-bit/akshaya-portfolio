@@ -401,71 +401,76 @@
 
       /* ---------- PROJECTS ---------- */
       .project-list {
-  display: flex;
-  flex-direction: column;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
+   display: flex;
+   flex-direction: column;
+   background: var(--line);
+   border: 1px solid var(--line);
+   border-radius: var(--radius);
+   overflow: hidden;
 }
 
 .project-row {
-  background: var(--bg);
-  display: grid;
-  grid-template-columns: 100px 1fr auto;
-  gap: 24px;
-  align-items: center;
-  padding: 26px 24px;
-  border-bottom: 1px solid var(--line);
-  transition: background 0.2s ease;
+   background: var(--bg);
+   display: grid;
+   grid-template-columns: 100px 1fr auto;
+   gap: 24px;
+   align-items: center;
+   padding: 26px 24px;
+   border-bottom: 1px solid var(--line);
+   transition: background 0.2s ease;
 }
 
 .project-row:hover {
-  background: var(--surface);
+   background: var(--surface);
 }
 
 /* Remove the last separator */
 .project-row:last-child {
-  border-bottom: none;
+   border-bottom: none;
+}
+
+/* Add border-top to project 4 (index 3) for visual separation */
+.project-row:nth-child(4) {
+   border-top: 1px solid var(--line);
 }
 
 .project-index {
-  font-family: "JetBrains Mono", monospace;
-  color: var(--amber);
-  font-size: 0.9rem;
+   font-family: "JetBrains Mono", monospace;
+   color: var(--amber);
+   font-size: 0.9rem;
 }
 
 .project-info h3 {
-  font-size: 1.15rem;
-  margin-bottom: 6px;
+   font-size: 1.15rem;
+   margin-bottom: 6px;
 }
 
 .project-info p {
-  color: var(--text-dim);
-  font-size: 0.9rem;
+   color: var(--text-dim);
+   font-size: 0.9rem;
 }
 
 .project-tags {
-  display: flex;
-  gap: 8px;
-  margin-top: 10px;
-  flex-wrap: wrap;
+   display: flex;
+   gap: 8px;
+   margin-top: 10px;
+   flex-wrap: wrap;
 }
 
 .project-tags span {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.7rem;
-  padding: 4px 9px;
-  border-radius: 20px;
-  border: 1px solid var(--line);
-  color: var(--text-dim);
+   font-family: "JetBrains Mono", monospace;
+   font-size: 0.7rem;
+   padding: 4px 9px;
+   border-radius: 20px;
+   border: 1px solid var(--line);
+   color: var(--text-dim);
 }
 
 .project-link {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.85rem;
-  color: var(--teal);
-  white-space: nowrap;
+   font-family: "JetBrains Mono", monospace;
+   font-size: 0.85rem;
+   color: var(--teal);
+   white-space: nowrap;
 }
 
       /* ---------- CONTACT / NEWSLETTER ---------- */
@@ -695,7 +700,7 @@
             </p>
             <div class="btn-row">
               <a href="#about" class="btn btn-primary">About Me</a>
-              <a href="#contact" class="btn btn-ghost">Let’s Connect</a>
+              <a href="#contact" class="btn btn-ghost">Let's Connect</a>
             </div>
           </div>
           <div class="term">
@@ -771,7 +776,7 @@
                   line-height: 1.8;
                 "
               >
-                I’m an AI &amp; Data Science student who loves coding, AI, web
+                I'm an AI &amp; Data Science student who loves coding, AI, web
                 development, content creation, and building projects — basically
                 trying to turn myself into a genuinely skilled tech person, not
                 just a degree holder.
@@ -869,404 +874,259 @@
       </section>
 
       <!-- PROJECTS -->
-     <section id="projects">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Projects</p>
-      <h2>Building ideas into practical work.</h2>
-      <p>
-        My current goal is to create projects that show my skills in AI,
-        programming, design, and problem-solving.
-      </p>
-    </div>
+      <section id="projects">
+   <div class="wrap">
+     <div class="section-head">
+       <p class="eyebrow">Projects</p>
+       <h2>Building ideas into practical work.</h2>
+       <p>
+         My current goal is to create projects that show my skills in AI,
+         programming, design, and problem-solving.
+       </p>
+     </div>
 
-    <div class="project-list">
+     <div class="project-list">
 
-      <!-- Project 01 -->
-      <div class="project-row">
-        <span class="project-index">01</span>
+       <!-- Project 01 -->
+       <div class="project-row">
+         <span class="project-index">01</span>
 
-        <div class="project-info">
-          <h3>Portfolio Website</h3>
+         <div class="project-info">
+           <h3>Portfolio Website</h3>
 
-          <p>
-            A personal portfolio site built to showcase my skills,
-            interests, and projects in a clean, professional way.
-          </p>
+           <p>
+             A personal portfolio site built to showcase my skills,
+             interests, and projects in a clean, professional way.
+           </p>
 
-          <div class="project-tags">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-          </div>
-        </div>
+           <div class="project-tags">
+             <span>HTML</span>
+             <span>CSS</span>
+             <span>JavaScript</span>
+           </div>
+         </div>
 
-        <a
-          href="https://akakshaya2308-bit.github.io/akshaya-portfolio/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="project-link"
-        >
-          Live view →
-        </a>
-      </div>
-
-
-      <!-- Project 02 -->
-      <div class="project-row">
-        <span class="project-index">02</span>
-
-        <div class="project-info">
-          <h3>AI LinkedIn Carousel Generator</h3>
-
-          <p>
-            An AI-powered web application that generates engaging LinkedIn
-            carousel content and post-ready captions, helping creators and
-            professionals turn ideas into polished social media content faster.
-          </p>
-
-          <div class="project-tags">
-            <span>AI</span>
-            <span>JavaScript</span>
-            <span>Content Generation</span>
-          </div>
-        </div>
-
-        <a
-          href="https://ai-carousel-generator.onrender.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="project-link"
-        >
-          Live demo →
-        </a>
-      </div>
+         <a
+           href="https://akakshaya2308-bit.github.io/akshaya-portfolio/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="project-link"
+         >
+           Live view →
+         </a>
+       </div>
 
 
-      <!-- Project 03 -->
-    <div class="project-row">
-        <span class="project-index">03</span>
+       <!-- Project 02 -->
+       <div class="project-row">
+         <span class="project-index">02</span>
 
-        <div class="project-info">
-          <h3>Attendance Management System</h3>
+         <div class="project-info">
+           <h3>AI LinkedIn Carousel Generator</h3>
 
-          <p>
-            A practical attendance tracking project focused on managing
-            student/employee attendance efficiently with a clean and
-            user-friendly interface.
-          </p>
+           <p>
+             An AI-powered web application that generates engaging LinkedIn
+             carousel content and post-ready captions, helping creators and
+             professionals turn ideas into polished social media content faster.
+           </p>
 
-          <div class="project-tags">
-            <span>Web App</span>
-            <span>Attendance</span>
-            <span>Productivity</span>
-          </div>
-        </div>
+           <div class="project-tags">
+             <span>AI</span>
+             <span>JavaScript</span>
+             <span>Content Generation</span>
+           </div>
+         </div>
 
-        <a
-          href="https://akakshaya2308-bit.github.io/Attendance-management-system-/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="project-link"
-        >
-          Live demo →
-        </a>
-      </div>
-
-
-      <!-- Project 04 -->
-      <div class="project-row">
-        <span class="project-index">04</span>
-
-        <div class="project-info">
-          <h3>UGC Product Ad</h3>
-
-          <p>
-            A short-form UGC-style product advertisement created to showcase
-            marketing creativity and product presentation in a modern
-            digital format.
-          </p>
-
-          <div class="project-tags">
-            <span>UGC</span>
-            <span>Video Ad</span>
-            <span>Content Creation</span>
-          </div>
-
-          <iframe
-            src="https://drive.google.com/file/d/1aje7hQtRS9B68N0fb8A4jT3Z70T5uWJu/preview"
-            title="UGC Product Ad"
-            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-            allowfullscreen
-            style="
-              width: 100%;
-              max-width: 500px;
-              height: 280px;
-              margin-top: 18px;
-              border: 1px solid var(--line);
-              border-radius: 12px;
-              background: #0b1012;
-            "
-          ></iframe>
-        </div>
-
-        <a
-          href="https://drive.google.com/file/d/1aje7hQtRS9B68N0fb8A4jT3Z70T5uWJu/view?usp=drivesdk"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="project-link"
-        >
-          Watch video →
-        </a>
-      </div>
+         <a
+           href="https://ai-carousel-generator.onrender.com/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="project-link"
+         >
+           Live demo →
+         </a>
+       </div>
 
 
-      <!-- Project 05 -->
-      <div class="project-row">
-        <span class="project-index">05</span>
+       <!-- Project 03 -->
+     <div class="project-row">
+         <span class="project-index">03</span>
 
-        <div class="project-info">
-          <h3>QR Code Generator</h3>
+         <div class="project-info">
+           <h3>Attendance Management System</h3>
 
-          <p>
-            A simple and useful QR code generator project that turns a
-            link into a scannable QR code for quick access and sharing.
-          </p>
+           <p>
+             A practical attendance tracking project focused on managing
+             student/employee attendance efficiently with a clean and
+             user-friendly interface.
+           </p>
 
-          <div class="project-tags">
-            <span>QR Code</span>
-            <span>Web Tool</span>
-            <span>JavaScript</span>
-          </div>
-        </div>
+           <div class="project-tags">
+             <span>Web App</span>
+             <span>Attendance</span>
+             <span>Productivity</span>
+           </div>
+         </div>
 
-        <a
-          href="https://akakshaya2308-bit.github.io/qr-website/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="project-link"
-        >
-          Live demo →
-        </a>
-      </div>
-
-
-      <!-- Project 06 -->
-      <div class="project-row">
-        <span class="project-index">06</span>
-
-        <div class="project-info">
-          <h3>Project Reel</h3>
-
-          <p>
-            A short video compilation of my work, edited with clips from
-            my own projects to showcase my progress and creative journey.
-            This is part of my plan to start my own content creation channel.
-          </p>
-
-          <div class="project-tags">
-            <span>Project Video</span>
-            <span>Editing</span>
-            <span>Content Creation</span>
-          </div>
-
-          <iframe
-            src="https://drive.google.com/file/d/1Q5LLIRdJbUScmrbgteHG9ZwDz8y0EdXJ/preview"
-            title="Project Reel"
-            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-            allowfullscreen
-            style="
-              width: 100%;
-              max-width: 500px;
-              height: 280px;
-              margin-top: 18px;
-              border: 1px solid var(--line);
-              border-radius: 12px;
-              background: #0b1012;
-            "
-          ></iframe>
-        </div>
-
-        <a
-          href="https://drive.google.com/file/d/1Q5LLIRdJbUScmrbgteHG9ZwDz8y0EdXJ/view?usp=drivesdk"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="project-link"
-        >
-          Watch video →
-        </a>
-      </div>
+         <a
+           href="https://akakshaya2308-bit.github.io/Attendance-management-system-/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="project-link"
+         >
+           Live demo →
+         </a>
+       </div>
 
 
-      <!-- Project 07 -->
-      <div class="project-row">
-        <span class="project-index">07</span>
+       <!-- Project 04 -->
+       <div class="project-row">
+         <span class="project-index">04</span>
 
-        <div class="project-info">
-          <h3>Freelance Perfume Ad Posters</h3>
+         <div class="project-info">
+           <h3>UGC Product Ad</h3>
 
-          <p>
-            Created premium promotional poster designs for a client’s
-            perfume brand, featuring luxury styling, perfume bottle
-            presentation, and a polished advertising aesthetic.
-          </p>
+           <p>
+             A short-form UGC-style product advertisement created to showcase
+             marketing creativity and product presentation in a modern
+             digital format.
+           </p>
 
-          <div class="project-tags">
-            <span>Branding</span>
-            <span>Poster Design</span>
-            <span>Freelance</span>
-          </div>
+           <div class="project-tags">
+             <span>UGC</span>
+             <span>Video Ad</span>
+             <span>Content Creation</span>
+           </div>
 
-          <div
-            style="
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-              gap: 14px;
-              margin-top: 18px;
-            "
-          >
-            <img
-              src="Royal Fragrance Opulent Poster Presentation.png"
-              alt="Royal Fragrance poster presentation"
-              style="
-                width: 100%;
-                border-radius: 12px;
-                border: 1px solid var(--line);
-                object-fit: cover;
-              "
-            />
+           <iframe
+             src="https://drive.google.com/file/d/1aje7hQtRS9B68N0fb8A4jT3Z70T5uWJu/preview"
+             title="UGC Product Ad"
+             allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+             allowfullscreen
+           ></iframe>
+         </div>
+       </div>
 
-            <img
-              src="Majestic Perfume Bottle on Velvet Background.png"
-              alt="Majestic perfume bottle on velvet background"
-              style="
-                width: 100%;
-                border-radius: 12px;
-                border: 1px solid var(--line);
-                object-fit: cover;
-              "
-            />
-          </div>
-        </div>
+     </div>
+   </div>
+ </section>
 
-        <a
-          href="Royal Fragrance Opulent Poster Presentation.png"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="project-link"
-        >
-          View posters →
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-      <!-- CONTACT -->
+      <!-- CONTACT / NEWSLETTER -->
       <section id="contact">
         <div class="wrap">
           <div class="section-head">
-            <p class="eyebrow">Contact</p>
-            <h2>Let's work together.</h2>
-            <p>
-              Have a project in mind, or just want to say hi? Send a message
-              below.
-            </p>
+            <p class="eyebrow">Get in touch</p>
+            <h2>Let's connect and create something amazing together.</h2>
           </div>
+
           <div class="contact-grid">
-            <form id="contactForm">
+            <!-- Newsletter Card (Right Side) -->
+            <div class="newsletter-card">
+              <div>
+                <h3>Join My Newsletter</h3>
+                <p>
+                  Get updates on my latest projects, insights, and creative
+                  work. I share progress, ideas, and learning discoveries.
+                </p>
+              </div>
+
+              <form id="newsletter-form" action="#" method="POST">
+                <div class="field">
+                  <label for="newsletter-email">Email Address</label>
+                  <input
+                    type="email"
+                    id="newsletter-email"
+                    placeholder="your@email.com"
+                    required
+                  />
+                  <div class="form-msg" id="newsletter-msg"></div>
+                </div>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+              </form>
+            </div>
+
+            <!-- Contact Form (Left Side) -->
+            <form id="contact-form" action="#" method="POST">
               <div class="field">
-                <label for="name">Name</label>
+                <label for="contact-name">Full Name</label>
                 <input
                   type="text"
-                  id="name"
-                  name="name"
-                  required
+                  id="contact-name"
                   placeholder="Your name"
+                  required
                 />
+                <div class="form-msg" id="name-msg"></div>
               </div>
+
               <div class="field">
-                <label for="email">Email</label>
+                <label for="contact-email">Email Address</label>
                 <input
                   type="email"
-                  id="email"
-                  name="email"
+                  id="contact-email"
+                  placeholder="your@email.com"
                   required
-                  placeholder="you@example.com"
                 />
+                <div class="form-msg" id="email-msg"></div>
               </div>
+
               <div class="field">
-                <label for="message">Message</label>
+                <label for="contact-message">Message</label>
                 <textarea
-                  id="message"
-                  name="message"
-                  required
+                  id="contact-message"
                   placeholder="Tell me about your project..."
+                  required
                 ></textarea>
+                <div class="form-msg" id="msg-msg"></div>
               </div>
-              <button
-                type="submit"
-                class="btn btn-primary"
-                style="align-self: flex-start"
-              >
-                Send Message
-              </button>
-              <p class="form-msg" id="contactMsg"></p>
+
+              <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
+          </div>
 
-            <div>
-              <div class="newsletter-card">
-                <div>
-                  <h3>Join the newsletter</h3>
-                  <p>
-                    Occasional notes on new projects, videos, and things I'm
-                    learning. No spam.
-                  </p>
-                  <form class="newsletter-form" id="newsletterForm">
-                    <input
-                      type="email"
-                      id="newsletterEmail"
-                      placeholder="you@example.com"
-                      required
-                      aria-label="Email for newsletter"
-                    />
-                    <button type="submit">Subscribe</button>
-                  </form>
-                  <p class="form-msg" id="newsletterMsg"></p>
-                </div>
-              </div>
-
-              <div class="direct-links">
-                <a href="mailto:akakshaya2308@gmail.com"
-                  ><span>Email</span><span> akakshaya2308@gmail.com →</span></a
-                >
-                <a
-                  href="https://www.linkedin.com/in/akshaya-k-411002390?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  ><span>LinkedIn</span><span> Connect with me →</span></a
-                >
-                <a href="#"
-                  ><span>YouTube</span><span> Content coming soon →</span></a
-                >
-              </div>
-            </div>
+          <!-- Direct Links -->
+          <div class="direct-links">
+            <a
+              href="mailto:akshayakallam2308@gmail.com"
+              title="Send me an email"
+            >
+              <span>Email</span>
+              <span>akshayakallam2308@gmail.com</span>
+            </a>
+            <a href="https://linkedin.com" target="_blank" title="Visit my LinkedIn">
+              <span>LinkedIn</span>
+              <span>LinkedIn Profile</span>
+            </a>
+            <a
+              href="https://github.com/akakshaya2308-bit"
+              target="_blank"
+              title="Visit my GitHub"
+            >
+              <span>GitHub</span>
+              <span>akakshaya2308-bit</span>
+            </a>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>© <span id="year"></span> — Built with HTML, CSS &amp; JS.</footer>
+    <footer>
+      <p>
+        &copy; 2025 Akshaya K. Designed &amp; built by myself. All rights
+        reserved.
+      </p>
+    </footer>
 
     <script>
-      // Mobile nav toggle
+      // Navigation toggle
       const navToggle = document.getElementById("navToggle");
       const navLinks = document.getElementById("navLinks");
+
       navToggle.addEventListener("click", () => {
         const isOpen = navLinks.classList.toggle("open");
         navToggle.setAttribute("aria-expanded", isOpen);
       });
+
+      // Close menu when a link is clicked
       navLinks.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
           navLinks.classList.remove("open");
@@ -1274,73 +1134,52 @@
         });
       });
 
-      // Typing effect in hero terminal
-      const typedEl = document.getElementById("typedOut");
-      const roles = [
-        "AI & Data Science Student.",
-        "Web Developer.",
-        "Creative Technologist.",
-        "Problem Solver.",
-      ];
-      const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
-
-      if (reduceMotion) {
-        typedEl.textContent = roles[0];
-      } else {
-        let roleIndex = 0,
-          charIndex = 0,
-          deleting = false;
-
-        function typeLoop() {
-          const current = roles[roleIndex];
-          if (!deleting) {
-            typedEl.textContent = current.slice(0, charIndex + 1);
-            charIndex++;
-            if (charIndex === current.length) {
-              deleting = true;
-              setTimeout(typeLoop, 1400);
-              return;
-            }
-          } else {
-            typedEl.textContent = current.slice(0, charIndex - 1);
-            charIndex--;
-            if (charIndex === 0) {
-              deleting = false;
-              roleIndex = (roleIndex + 1) % roles.length;
-            }
+      // Smooth scroll for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (href !== "#" && document.querySelector(href)) {
+            e.preventDefault();
           }
-          setTimeout(typeLoop, deleting ? 40 : 70);
+        });
+      });
+
+      // Typing animation
+      const roles = [
+        "Akshaya K – AI & Data Science Student",
+        "Python Enthusiast",
+        "Web Developer",
+        "AI Learner",
+        "Content Creator",
+      ];
+      let roleIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+
+      const typedOut = document.getElementById("typedOut");
+
+      function typeRole() {
+        const currentRole = roles[roleIndex];
+
+        if (!isDeleting && charIndex < currentRole.length) {
+          typedOut.textContent += currentRole[charIndex];
+          charIndex++;
+          setTimeout(typeRole, 80);
+        } else if (isDeleting && charIndex > 0) {
+          typedOut.textContent = currentRole.substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(typeRole, 40);
+        } else if (charIndex === currentRole.length) {
+          isDeleting = true;
+          setTimeout(typeRole, 2000);
+        } else if (charIndex === 0 && isDeleting) {
+          isDeleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+          setTimeout(typeRole, 500);
         }
-        typeLoop();
       }
 
-      // Contact form (front-end only — wire up to a backend/service to actually send)
-      document
-        .getElementById("contactForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          const msg = document.getElementById("contactMsg");
-          msg.textContent =
-            "Thanks — your message has been noted. (Connect this form to a backend or service like Formspree to actually receive it.)";
-          msg.classList.add("ok");
-          this.reset();
-        });
-
-      // Newsletter form (front-end only)
-      document
-        .getElementById("newsletterForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          const msg = document.getElementById("newsletterMsg");
-          msg.textContent =
-            "You're on the list. (Connect this to Mailchimp/ConvertKit/etc. to actually collect emails.)";
-          msg.classList.add("ok");
-          this.reset();
-        });
-
-      document.getElementById("year").textContent = new Date().getFullYear();
+      typeRole();
     </script>
   </body>
 </html>
